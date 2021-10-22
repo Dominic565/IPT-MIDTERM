@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class AccountSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $data = [
+            [
+                'user_id' => 1,
+                'acct_name' => 'Belida I. Regular Account',
+                'init_invest' => 890500,
+                'start_date' => '2020-06-03',
+                'remarks' => 'Done with normal transaction'
+            ],
+            [
+                'user_id' => 2,
+                'acct_name' => 'Delima K. Regular Account',
+                'init_invest' => 15000,
+                'start_date' => '2020-03-23',
+                'remarks' => 'Done with normal transaction'
+            ],
+            [
+                'user_id' => 3,
+                'acct_name' => 'Calamba J. Trust Fund	',
+                'init_invest' => 18500,
+                'start_date' => '2020-05-28',
+                'remarks' => 'Done with normal transaction'
+            ]
+        ];
+
+        foreach($data as $acc){
+            \App\Account::create($acc);
+        }
+    }
+}
